@@ -1,0 +1,29 @@
+SWEN-250 Activity Reflection
+
+Name: Kyle McCoy
+
+================================================================
+Start Part 1
+Estimated Time	00 45
+Plan: create code, run and compile the code, if successful upload to git
+(Order of implementation, testing approach, etc.)
+
+Complete
+Actual Time	HH MM
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
+Start Part 2
+Estimated Time	HH MM
+Plan:
+(Order of implementation, testing approach, etc.)
+
+Complete
+Actual Time	HH MM
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
