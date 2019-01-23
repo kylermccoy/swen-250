@@ -9,20 +9,20 @@ Plan: create code, run and compile the code, if successful upload to git
 (Order of implementation, testing approach, etc.)
 
 Complete
-Actual Time	HH MM
-Observations:
+Actual Time	01 07
+Observations: c code must be specific when using decimals
 (Lessons learned, problems encountered, obstacles overcome, etc.)
 
 
 ================================================================
 Start Part 2
-Estimated Time	HH MM
-Plan:
+Estimated Time	00 15
+Plan: modify code from Part 1, test and upload when complete
 (Order of implementation, testing approach, etc.)
 
 Complete
-Actual Time	HH MM
-Observations:
+Actual Time	00 09
+Observations: just had to fix print format
 (Lessons learned, problems encountered, obstacles overcome, etc.)
 
 
