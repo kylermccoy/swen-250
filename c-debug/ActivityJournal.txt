@@ -19,6 +19,6 @@ Observations:
 	learned how to copy a file and rename it, created a
 	separate run file "prime_standard" instead of replacing
 	"prime" to ensure that the code would still compile
-	and run
+	and run, confirmed it ran and removed "prime_standard"
 
 ================================================================
