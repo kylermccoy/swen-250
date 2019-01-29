@@ -1,0 +1,24 @@
+SWEN-250 Activity Reflection
+
+Name: Kyle McCoy
+
+================================================================
+Part 2 (Part 1 not required)
+Estimated Time	01 00
+Plan:
+(Order of implementation, testing approach, etc.)
+	copy the prime.c file, rename the file, edit the 
+	Makefile, carefully test the code to ensure it still
+	compiles and runs properly, add commit and push to git
+	if successful.
+
+Complete
+Actual Time	00 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+	learned how to copy a file and rename it, created a
+	separate run file "prime_standard" instead of replacing
+	"prime" to ensure that the code would still compile
+	and run
+
+================================================================
