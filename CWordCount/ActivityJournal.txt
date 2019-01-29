@@ -1,0 +1,20 @@
+SWEN-250 Activity Reflection
+
+Name:
+
+================================================================
+Start
+Estimated Time	03 00
+Plan: follow slide examples to create the code, test the code
+	against the default 'wc' program, if successful upload
+	to git
+(Order of implementation, testing approach, etc.)
+
+Complete
+Actual Time	02 20
+Observations: didn't fully understand the getchar(), figuring
+		how to correctly count words took most time
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
