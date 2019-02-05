@@ -38,7 +38,7 @@ int main( int argc, char *argv[] ) {		// LLK addition for unit testing
 		return test() ;
 
 	while ( (len = readline( line, MAXLINE )) > 0 ) {
-		printf("%s\n", line);
+		// removed echo for Part 2: printf("%s\n", line);
 		/* Fill in with code to save the longest line using your copy function */
 		// checks if the input is longer than the current longest
 		if ( len > longest_len ) {
