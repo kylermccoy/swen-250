@@ -21,14 +21,20 @@ Observations:
 
 ================================================================
 Part 2
-Estimated Time	HH MM
+Estimated Time	00 30
 Plan:
 (Order of implementation, testing approach, etc.)
+	check the lecture notes to see if there is anything
+	helpful about copying data types
 
 Complete
-Actual Time	HH MM
+Actual Time	00 15
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	when copying an array you have to use a loop and
+	individually copy each attribute, had to add two
+	variables to the main function to check for greatest
+	input size and another to hold the information
+	of the input with the greatest size
 
 ================================================================

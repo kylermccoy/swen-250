@@ -29,6 +29,8 @@ extern int test( void) ;		// LLK addition for unit testing
 int main( int argc, char *argv[] ) {		// LLK addition for unit testing
 	int len;	       /* current line length */
 	char line[MAXLINE + 1];    /* current input line */
+	int longest_len = 0 ;         /* longest line length */
+	char longest_line[MAXLINE + 1] ;	/* copy of the longest input line */
 
 	// LLK additional if statement to execute unit tests if program
 	// name contains "test".
@@ -38,8 +40,13 @@ int main( int argc, char *argv[] ) {		// LLK addition for unit testing
 	while ( (len = readline( line, MAXLINE )) > 0 ) {
 		printf("%s\n", line);
 		/* Fill in with code to save the longest line using your copy function */
+		// checks if the input is longer than the current longest
+		if ( len > longest_len ) {
+			longest_len = len ;
+			copy(longest_line, line) ;
+		}
 	}
-
+	printf("%s\n", longest_line) ;
 	return 0; // return success code
 }
 
@@ -82,6 +89,8 @@ void copy( char to[], char from[] ) {
 	//	functions to implement this function.
 	//	You MUST use the passed parameters as array.
 	//	Do NOT use pointers.
+	int i ;
+	for ( i = 0 ; to[i] = from[i] ; i++ ) ;
 }
 
 // LLK added simple boolean assert function for unit testing
