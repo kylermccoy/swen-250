@@ -66,6 +66,7 @@ int readline( char s[], int max_chars ) {
 	/* your code here */
 	int i = 0 ;
 	int ch ;
+	// loop to count number of characters in input line
 	for ( ch = getchar() ; ch != '\n' ; ch = getchar() ) {
 		if ( ch == EOF ) {
 			return -1 ;
@@ -90,6 +91,7 @@ void copy( char to[], char from[] ) {
 	//	You MUST use the passed parameters as array.
 	//	Do NOT use pointers.
 	int i ;
+	// copy each individual item from the array
 	for ( i = 0 ; to[i] = from[i] ; i++ ) ;
 }
 
