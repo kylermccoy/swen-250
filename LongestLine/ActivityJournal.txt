@@ -1,0 +1,34 @@
+SWEN-250 Activity Reflection
+
+Name: Kyle McCoy
+
+================================================================
+Part 1
+Estimated Time	
+Plan:		00 30
+(Order of implementation, testing approach, etc.)
+	open the code and get a good look at it, check the 
+	lecture notes and slides to see if there is anything
+	useful to the task	
+
+Complete
+Actual Time	00 20
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+	the ending character for an array is extremely important
+	otherwise it kept reprinting any characters from the 
+	previous line that was longer than the current line
+
+================================================================
+Part 2
+Estimated Time	HH MM
+Plan:
+(Order of implementation, testing approach, etc.)
+
+Complete
+Actual Time	HH MM
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+
+
+================================================================
