@@ -62,7 +62,7 @@ int main( int argc, char *argv[] ) {		// LLK addition for unit testing
  *      * If EOF is encountered, return (-1).
  * Note: You may have to declare additional variables.
  */
-int readline( char s[], int max_chars ) {
+int readline( char line[], int max_chars ) {
 	/* your code here */
 	int i = 0 ;
 	int ch ;
@@ -72,10 +72,10 @@ int readline( char s[], int max_chars ) {
 			return -1 ;
 		}
 		if ( i < max_chars ) {
-			s[ i++ ] = ch ;
+			line[ i++ ] = ch ;
 		}
 	}
-	s[ i ] = '\0' ;
+	line[ i ] = '\0' ;
 	return i ; // placeholder for the real return value.
 }
 
