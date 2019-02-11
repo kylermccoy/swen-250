@@ -1,0 +1,50 @@
+SWEN-250 Activity Reflection
+
+Name: Kyle McCoy
+
+================================================================
+Implement code to pass all unit tests
+
+Estimated Time	02 00
+Plan:
+(Order of implementation, testing approach, etc.)
+	Check lecture notes for any helpful bits of code,
+	Read assignment site over a second time, read each 
+	function's comments and hints carefully, slowly
+	implement each function, test slight changes after 
+	implementations
+
+Complete
+Actual Time	04 00
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+	struggled trying to understand exactly what the 
+	assignment was trying to tell me to do for each 
+	function, when I finally figured out what they 
+	wanted I had a hard time trying to implement it
+	correctly, requested some help from those around
+	me, finally understood how the code was supposed 
+	to work after careful explanations
+
+
+================================================================
+Test correct operation from the command line
+
+Estimated Time	00 30
+Plan:
+(Order of implementation, testing approach, etc.)
+	after completeing implementation run the tests
+	if test fail check code slowly, compile the actual
+	version and compare the outputs
+
+Complete
+Actual Time	01 00
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+	test failed quite often, my get_line function was
+	skipping over fields, after modifying it started
+	passing more of the tests, everything compiled
+	compared output, everything seemed correct,
+	uploaded to git
+
+================================================================
