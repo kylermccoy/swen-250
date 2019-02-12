@@ -1,0 +1,39 @@
+SWEN-250 Activity Journal
+C (no pointers) Practice Practicum
+
+Name: Kyle McCoy
+
+================================================================
+skip_spaces
+Actual Time	20
+Lessons learned, problems encountered, obstacles overcome, etc.
+	checking if it was a space character didn't work 
+	so I would check if it was a letter than use an
+	else statement
+
+================================================================
+find_next_word
+Actual Time	20
+Lessons learned, problems encountered, obstacles overcome, etc.
+	learned, problems encountered, obstacles overcome, etc.
+        checking if it was a space character didn't work
+        so I would check if it was a letter than use an
+        else statement
+
+================================================================
+change_to_upper
+Actual Time	10
+Lessons learned, problems encountered, obstacles overcome, etc.
+	had to typecast character to int to make it upper
+	case and then typecast it back to character
+================================================================
+capitialize_all_words
+Actual Time	MM
+Lessons learned, problems encountered, obstacles overcome, etc.
+
+================================================================
+fix_bad_code
+Actual Time	MM
+Lessons learned, problems encountered, obstacles overcome, etc.
+
+================================================================
