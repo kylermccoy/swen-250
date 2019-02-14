@@ -25,11 +25,14 @@
 int count_number_of_numeric_characters( char mystring[] )
 {
 	int total_num = 0 ;
+	// check if string is empty
 	if (mystring == NULL) {
 		return 0 ;
 	}
 	int i ;
+	// loop through string
 	for( i = 0; mystring[i] != '\0'; i++ ) {
+		// check if string is an integer
 		if( mystring[i] >= '0' &&  mystring[i] <= '9' ) {
 			total_num++ ;
 		}
@@ -45,11 +48,16 @@ int count_number_of_numeric_characters( char mystring[] )
 // Hint -- per the ASCII code chart an 'a' is 97 decimal and an 'A' is 65 decimal.
 //         You can use that difference to convert from lower case to upper case.
 void convert_to_upper_case( char mystring[] )
-{;
+{	
+	// check if string is not empty
 	if(mystring != NULL) {
 		int i ;
+		// loop through string
 		for( i = 0; mystring[i] != '\0'; i++ ) {
+			// check if string value is a lower case character
 			if( mystring[i] >= 'a' && mystring[i] <= 'z') {
+				// typecast char to int subtract by 32 to make the dec num capital
+				// typecast int back to char
 				mystring[i] = (char)((int)(mystring[i])-32) ;
 			}
 		}
@@ -84,7 +92,7 @@ int fix_bad_code( int numbers[], int number_to_add )
 {
 	int i ;
 	int total = 0 ;
-	
+	// loop through array until number_to_add is reached
 	for ( i = 0 ; i < number_to_add ; i++ ) {
 		total += numbers[ i ] ;
 	}		
