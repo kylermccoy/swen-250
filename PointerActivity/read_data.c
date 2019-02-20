@@ -28,5 +28,22 @@ void read_data( char *cp, int *ip, double *dp ) {
 	}
 	int MAX_CHARS = 25 ;
 	char int_line[ MAX_CHARS + 1 ] ;
+	int i = 0 ;
+	for ( ch=getchar() ; ch != '$' && ch != EOF ; ch=getchar() ) {
+		if ( i < MAX_CHARS ) {
+			int_line[i++] = ch ;
+		}	
+	}
+	int_line[i] = '\0' ;
+	*ip = atoi(int_line) ;
+	char float_line[ MAX_CHARS + 1 ] ;
+	i = 0 ;
+	for ( ch=getchar() ; ch != '$' && ch != EOF ; ch=getchar() ) {
+		if ( i < MAX_CHARS ) {
+			float_line[i++] = ch ;
+		}
+	}
+	float_line[i] = '\0' ;
+	*dp = atof(float_line) ;
 	
 }

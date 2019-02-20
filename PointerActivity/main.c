@@ -18,7 +18,6 @@
 #include <string.h>
 
 #include "read_data.h"
-#include "read_data.c"
 
 int main() {
 	/* your declarations and statements REPLACE this comment */
@@ -33,7 +32,8 @@ int main() {
 
 	read_data( cp, ip, dp ) ;
 
-	printf("Character %c Integer %d Floating point %.4f\n", character, integer, f_point) ;
+	printf("Character %c Integer %d Floating point %.4f\n", character, integer, f_point) 
+;
 	
 	return 0 ;
 }
