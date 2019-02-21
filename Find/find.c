@@ -17,7 +17,13 @@
  * or (-1) if the <ch> is not in <string>.
  */
 int find_ch_index(char string[], char ch) {
-	return NOT_FOUND ;	// placeholder
+	int i;
+	for( i = 0; string[i] != '\0'; i++ ) {
+		if( string[i] == ch ) {
+			return i ;
+		}
+	}
+	return NOT_FOUND ;
 }
 
 /*
@@ -28,7 +34,14 @@ int find_ch_index(char string[], char ch) {
  *****
  */
 char *find_ch_ptr(char *string, char ch) {
-	return NULL ;	// placeholder
+	while (*string != '\0') {
+		if( *string == ch ) {
+			return string ;
+		}else{
+			string++ ;
+		}
+	}
+	return NULL ;
 }
 
 /*
@@ -37,7 +50,14 @@ char *find_ch_ptr(char *string, char ch) {
  * in <stop>.
  */
 int find_any_index(char string[], char stop[]) {
-	return NOT_FOUND ;	// placeholder
+	int i ;
+	for( i = 0; string[i] != '\0'; i++ ) {
+		int found = find_ch_index(stop, string[i]) ;
+		if( found != -1 ) {
+			return i ;
+		}
+	}
+	return NOT_FOUND ; 
 }
 
 /*
@@ -49,7 +69,15 @@ int find_any_index(char string[], char stop[]) {
  *****
  */
 char *find_any_ptr(char *string, char* stop) {
-	return NULL ;	// placeholder
+	while(*string != '\0') {
+		char *found = find_ch_ptr(stop, *string) ;
+		if( found != NULL ){
+			return string ;
+		}else{
+			string++ ;
+		}
+	}
+	return NULL ;
 }
 
 /*
