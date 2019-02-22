@@ -91,5 +91,27 @@ char *find_any_ptr(char *string, char* stop) {
  *****
  */
 char *find_substr(char *string, char* substr) {
-	return NULL ;	// placeholder
+	if( *substr == '\0' ) {
+		return string ;
+	}
+	char *tempstring ;
+	tempstring = string ;
+	char *tempsub ;
+	tempsub = substr ;
+	while(*string != '\0') {
+		if(*string != *substr) {
+			string++ ;
+		}else{
+			tempstring = string ;
+			while(*string == *substr) {
+				substr++ ;
+				string++ ;
+				if(*substr == '\0') {
+					return tempstring ;
+				}
+			}
+			substr = tempsub ;
+		}
+	}
+	return NULL ;			
 }

@@ -1,17 +1,26 @@
 SWEN-250 Activity Reflection
 
-Name:
+Name:	Kyle McCoy
 
 ================================================================
 Start
-Estimated Time	HH MM
+Estimated Time	01 30
 Plan:
 (Order of implementation, testing approach, etc.)
+	work slowly on one function, look at helpful tips
+	and tricks from the assignment page and the lecture
+	slides, look through the test code to see what needs
+	to happen and how
 
 Complete
-Actual Time	HH MM
+Actual Time	01 00
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	ran tests after each implemented function, after doing
+	the functions with the indexing using the pointers
+	was a fairly simple transition, I over thought the 
+	final function by thinking there was some fancy easy
+	way of completeing it and tried to use the older
+	functions instead of just implementing it normally
 
 ================================================================
