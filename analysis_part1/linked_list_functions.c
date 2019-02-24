@@ -16,14 +16,12 @@
 // This function returns a pointer to the allocated node.
 struct node *create_node( char *word )
 {
-	struct node *created ;
+	struct node *created = malloc(sizeof(struct node)) ;
 	created->p_previous = NULL ;
 	created->p_next = NULL ;
-	char *copy ; 
-	copy = malloc(strlen(word)+1) ;
-	created->one_word.unique_word = copy ;
-	strlcpy(copy,word,strlen(word)+1) ;
-	created->one_word.word_count++ ;
+	created->one_word.unique_word = malloc(strlen(word)+1) ;
+	strlcpy(created->one_word.unique_word,word,strlen(word)+1) ;
+	created->one_word.word_count = 1 ;
 	return created ;	
 }
 
@@ -42,7 +40,21 @@ struct node *create_node( char *word )
 // Hint: be sure to maintain both the p_previous and p_next pointers in each node.
 int add_node_at_head( struct linked_list *p_list, char *word )
 {
-	return -1 ;	// REMOVE THIS and replace with working code
+	if((p_list==NULL)||(word==NULL)||(word[0]=='\0')){
+		return 0 ;
+	}
+	struct node *added = create_node(word) ;
+	if(p_list->p_tail==NULL){
+		p_list->p_head = p_list->p_tail = p_list->p_current = added ;
+	}else{
+		struct node *old_head ;
+		old_head = p_list->p_head ;
+		old_head->p_previous = added ;
+		added->p_next = old_head ;
+		p_list->p_current = p_list->p_head = added ;
+		
+	}
+	return 1 ;
 }
 
 // For the passed linked_list pointer free all of the nodes in the list.

@@ -26,15 +26,19 @@ Observations:
 ================================================================
 add_node_at_head
 Start
-Estimated Time	HH MM
+Estimated Time	02 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow the steps and hints carefully, check for any 
+	clues in the lecture slides
 
 Complete
-Actual Time	HH MM
+Actual Time	01 20
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	I had to go back and fix my create_node function
+	as it passed all the tests but still didn't work 
+	correctly when called
 
 ================================================================
 clear_linked_list
