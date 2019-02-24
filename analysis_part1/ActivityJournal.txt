@@ -43,15 +43,21 @@ Observations:
 ================================================================
 clear_linked_list
 Start
-Estimated Time	HH MM
+Estimated Time	01 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	similarly to the last functions I simply took a look
+	at the lecture notes to see if they would lend any help
+	on the order in which to free things
 
 Complete
-Actual Time	HH MM
+Actual Time	00 30
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	I used an example from the lecture notes to base my
+	function on, the hints from the comments helped, the 
+	output from failing a test reminded me to set the
+	pointers to NULL when the loop is done
 
 ================================================================
 add_node_after_current

@@ -52,7 +52,6 @@ int add_node_at_head( struct linked_list *p_list, char *word )
 		old_head->p_previous = added ;
 		added->p_next = old_head ;
 		p_list->p_current = p_list->p_head = added ;
-		
 	}
 	return 1 ;
 }
@@ -64,8 +63,18 @@ int add_node_at_head( struct linked_list *p_list, char *word )
 // Lastly, return the number of nodes freed (which could be zero if p_list indicates an empty list).
 int clear_linked_list( struct linked_list *p_list )
 {
-	p_list->p_tail = (struct node *) 1 ;	// BOGUS code to make unit test fail -- remove this!
-	return -1 ;	// REMOVE THIS and replace with working code
+	struct node *temp ;
+	int num_nodes = 0 ;
+	while(p_list->p_head!=NULL){
+		free(p_list->p_head->one_word.unique_word) ;
+		temp = p_list->p_head ;
+		p_list->p_head = p_list->p_head->p_next ;
+		free(temp) ;
+		num_nodes++ ;
+	}
+	p_list->p_tail = NULL ;
+	p_list->p_current = NULL ;
+	return num_nodes ;
 }
 
 
