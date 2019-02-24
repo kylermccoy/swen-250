@@ -80,14 +80,22 @@ Observations:
 ================================================================
 find_word
 Start
-Estimated Time	HH MM
+Estimated Time	02 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	read the instructions carefully to get a better grip
+	and understanding of what the function needs to do,
+	break return value requirements down separately,
+	find what cases have in common and what they are 
+	lacking, test after every attempt
 
 Complete
-Actual Time	HH MM
+Actual Time	01 15
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	I need to run check cases before and after runnning 
+	the loop for cases where the list was only one
+	element long or if the element needed to be added 
+	after the tail
 
 ================================================================

@@ -47,8 +47,7 @@ int add_node_at_head( struct linked_list *p_list, char *word )
 	if(p_list->p_tail==NULL){
 		p_list->p_head = p_list->p_tail = p_list->p_current = added ;
 	}else{
-		struct node *old_head ;
-		old_head = p_list->p_head ;
+		struct node *old_head = p_list->p_head ;
 		old_head->p_previous = added ;
 		added->p_next = old_head ;
 		p_list->p_current = p_list->p_head = added ;
@@ -105,7 +104,7 @@ int add_node_after_current( struct linked_list *p_list, char *word )
 	}
 	struct node *temp = p_list->p_head ;
 	while(temp->one_word.unique_word!=p_list->p_current->one_word.unique_word){
-		temp = p_list->p_head->p_next ;
+		temp = temp->p_next ;
 	}
 	struct node *added = create_node(word) ;
 	added->p_previous = temp ;
@@ -148,6 +147,43 @@ int add_node_after_current( struct linked_list *p_list, char *word )
 // If any of these conditions are violated this function returns a -1 to indicate invalid input.
 int find_word( struct linked_list *p_list, char *word )
 {
-	return -2 ;	// REMOVE THIS and replace with working code
+	if((word==NULL)||(word[0]=='\0')||(p_list==NULL)||(p_list->p_head==NULL)){
+		return -1 ;
+	}
+	struct node *start = p_list->p_head ;
+	int check = strcmp(start->one_word.unique_word,word) ;
+	if(check==0){
+		p_list->p_current = start ;
+		return 1 ;
+	}
+	if(check>0){
+		p_list->p_current = p_list->p_head->p_previous ;
+		return 0 ;
+	}
+	int old_check = check ;
+	while(start->p_next!=NULL){
+		check = strcmp(start->one_word.unique_word,word) ;
+		if(check==0){
+			p_list->p_current = start ;
+			return 1 ;
+		}
+		if((old_check<0)&&(check>0)){
+			p_list->p_current = start->p_previous ;
+			return 0 ;
+		}
+		start = start->p_next ;
+		old_check = check ;
+	}
+	check = strcmp(start->one_word.unique_word,word) ;
+        if(check==0){
+                p_list->p_current = start ;
+                return 1 ;
+        }
+	if((old_check<0)&&(check>0)){
+		p_list->p_current = start->p_previous ;
+		return 0 ;
+	}
+	p_list->p_current = start ;
+	return 0 ;
 }
 
