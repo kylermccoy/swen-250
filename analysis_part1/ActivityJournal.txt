@@ -62,15 +62,20 @@ Observations:
 ================================================================
 add_node_after_current
 Start
-Estimated Time	HH MM
+Estimated Time	01 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow similar example to add_node_to_head, but make
+	loop to make sure it adds after the current, carefully
+	make sure that each node points to the right pointer
 
 Complete
-Actual Time	HH MM
+Actual Time	00 45
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	only problem found was a segmentation order that would
+	appear when I attempt to switch or assign pointers
+	in an inproper order
 
 ================================================================
 find_word

@@ -96,7 +96,28 @@ int clear_linked_list( struct linked_list *p_list )
 //       use the add_node_at_head function to create the new node.
 int add_node_after_current( struct linked_list *p_list, char *word )
 {
-	return -1 ;	// REMOVE THIS and replace with working code
+	if((word[0]=='\0')||(word==NULL)||(p_list==NULL)){
+		return 0 ;
+	}
+	if(p_list->p_current==NULL){
+		add_node_at_head(p_list,word) ;
+		return 1 ;
+	}
+	struct node *temp = p_list->p_head ;
+	while(temp->one_word.unique_word!=p_list->p_current->one_word.unique_word){
+		temp = p_list->p_head->p_next ;
+	}
+	struct node *added = create_node(word) ;
+	added->p_previous = temp ;
+	added->p_next = temp->p_next ;
+	temp->p_next = added ;
+	if(added->p_next==NULL){
+		p_list->p_tail = added ;
+	}else{
+		added->p_next->p_previous = added ;
+	}
+	p_list->p_current = added ;
+	return 1 ;
 }
 
 // Searches the linked list for the passed word.
