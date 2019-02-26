@@ -41,7 +41,16 @@ static bool prefix(char *s, char *pre) {
  * Copy <string> to <result> while removing all occurrences of <ch>.
  */
 void filter_ch_index(char string[], char result[], char ch) {
-	result[0] = NUL ; // placeholder
+	int i = 0 ;
+	int k = 0 ;
+	while(string[i] != NUL) {
+		if(string[i] != ch){
+			result[k] = string[i] ;
+			k++ ;
+		}
+		i++ ;
+	}
+	result[k] = NUL ;
 }
 
 /*
