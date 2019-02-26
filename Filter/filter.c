@@ -62,7 +62,20 @@ void filter_ch_index(char string[], char result[], char ch) {
  *****
  */
 char *filter_ch_ptr(char *string, char ch) {
-	return strcpy(malloc(1), "") ; // placeholder
+	char *p_copy = malloc(strlen(string)+1) ;
+	char *p = p_copy ;
+	while(*string != NUL){
+		if(*string != ch){
+			p = *string ;
+			p++ ;
+		}
+		string++ ;
+	}
+	p = NUL ;
+	p = malloc(strlen(p_copy)+1) ;
+	strcpy(p,p_copy) ;
+	free(p_copy) ;
+	return p ;
 }
 
 /*
