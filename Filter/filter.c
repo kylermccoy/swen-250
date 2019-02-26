@@ -64,14 +64,14 @@ void filter_ch_index(char string[], char result[], char ch) {
 char *filter_ch_ptr(char *string, char ch) {
 	char *p_copy = malloc(strlen(string)+1) ;
 	char *p = p_copy ;
-	while(*string != NUL){
-		if(*string != ch){
-			p = *string ;
+	while(string[0]!=NUL){
+		if(string[0]!=ch){
+			p[0] = string[0] ;
 			p++ ;
 		}
 		string++ ;
 	}
-	p = NUL ;
+	p[0] = NUL ;
 	p = malloc(strlen(p_copy)+1) ;
 	strcpy(p,p_copy) ;
 	free(p_copy) ;
