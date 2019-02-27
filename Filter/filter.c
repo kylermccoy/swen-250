@@ -104,7 +104,16 @@ void filter_any_index(char string[], char result[], char remove[]) {
  *****
  */
 char *filter_any_ptr(char *string, char* remove) {
-	return strcpy(malloc(1), "") ; // placeholder
+	char *p_copy = malloc(strlen(string)+1) ;
+	strcpy(p_copy,string) ;
+	while(remove[0]!=NUL){
+		p_copy = filter_ch_ptr(p_copy,remove[0]) ;
+		remove++ ;
+	}
+	char *p = malloc(strlen(p_copy)+1) ;
+	strcpy(p,p_copy) ;
+	free(p_copy) ;
+	return p ;
 }
 
 /*
