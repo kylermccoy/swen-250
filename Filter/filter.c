@@ -126,5 +126,20 @@ char *filter_any_ptr(char *string, char* remove) {
  *****
  */
 char *filter_substr(char *string, char* substr) {
-	return strcpy(malloc(1), "") ; // placeholder
+	char *p_copy = malloc(strlen(string)+1) ;
+	char *p = p_copy ;
+	while(string[0]!=NUL){
+		if(prefix(string,substr)){
+			string+=strlen(substr) ;
+		}else{
+			p[0] = string[0] ;
+			p++ ;
+			string++ ;
+		}	
+	}
+	p[0] = NUL ;
+	char *result = malloc(strlen(p_copy)+1) ;
+	strcpy(result,p_copy) ;
+	free(p_copy) ;
+	return result ;
 }

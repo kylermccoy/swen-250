@@ -4,16 +4,19 @@ Name:	Kyle McCoy
 
 ================================================================
 Start
-Estimated Time	01 00
+Estimated Time	05 00
 Plan:
 (Order of implementation, testing approach, etc.)
 	implement each function one at a time, carefully 
 	reading the comments and assignment instructions
 
 Complete
-Actual Time	HH MM
+Actual Time	05 00
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	struggled to use the pointers in the right way,
+	freed space too early several times, accidentally
+	set the pointer to the NUL point of the string 
+	several times
 
 ================================================================
