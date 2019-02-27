@@ -83,7 +83,15 @@ char *filter_ch_ptr(char *string, char ch) {
  * any characters in <remove>.
  */
 void filter_any_index(char string[], char result[], char remove[]) {
-	result[0] = NUL ;
+	int i = 0 ;
+	char copy[strlen(string)] ;
+	strcpy(copy,string) ;
+	strcpy(result,string) ;
+	while(i<strlen(remove)){
+		filter_ch_index(copy,result,remove[i]);
+		strcpy(copy,result) ;
+		i++ ;
+	}
 }
 
 /*
