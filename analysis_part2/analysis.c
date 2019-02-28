@@ -21,9 +21,23 @@
 // For simplicity all words passed from the unit tests are all lower case only.
 int process_word ( struct linked_list *p_list, char *word )
 {
-	int status = 0 ;
-
-	return status ;
+	if((p_list==NULL)||(word==NULL)||(word[0]=='\0')){
+		return 0 ;
+	}
+	if(p_list->p_head==NULL){
+		add_node_at_head(p_list,word) ;
+		return 1 ;
+	}
+	int check = find_word(p_list,word) ;
+	if(check==1){
+		p_list->p_current->one_word.word_count++ ;
+		return 1 ;
+	}
+	if(check==0){
+		add_node_after_current(p_list,word);
+		return 1 ;
+	}
+	return 0 ;
 }
 
 // First checks that the passed string with the file name is not a NULL pointer and is not an empty string.
@@ -34,9 +48,10 @@ int process_word ( struct linked_list *p_list, char *word )
 // NOTE -- this function MUST convert all words read to lower case only! e.g "First" becomes "first"
 int read_file( struct linked_list *p_list, char *file_name )
 {
-	int word_count = 0 ;
-	
-	return word_count ;
+	if((file_name==NULL)||(file_name[0]=='\0')||(p_list==NULL)){
+		return 0 ;
+	}
+	return 0 ;
 }
 
 // Returns 0 in the word_count field if the p_list pointer is NULL.
