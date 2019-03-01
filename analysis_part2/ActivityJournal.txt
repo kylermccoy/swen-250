@@ -42,15 +42,17 @@ Observations:
 ================================================================
 get_next_word
 Start
-Estimated Time	HH MM
+Estimated Time	00 30
 Plan:
 (Order of implementation, testing approach, etc.)
-
+	follow the same ideas for implementation and approach
+	from the previous function
 Complete
-Actual Time	HH MM
+Actual Time	00 10
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	followed the same idea as the previous function and
+	all implementation went smoothly
 
 ================================================================
 get_last_word

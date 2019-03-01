@@ -60,15 +60,13 @@ int read_file( struct linked_list *p_list, char *file_name )
 // Otherwise, returns a struct with the first unique word and its number of occurrences in the text file.
 struct word_entry get_first_word( struct linked_list *p_list )
 {
-	struct word_entry entry ;
 	if((p_list==NULL)||(p_list->p_head==NULL)){
+		struct word_entry entry ;
 		entry.word_count = 0 ;
 		return entry ;
 	}
-	entry.word_count = p_list->p_head->one_word.word_count ;
-	entry.unique_word = p_list->p_head->one_word.unique_word ;
 	p_list->p_current = p_list->p_head ;
-	return entry ;
+	return p_list->p_head->one_word ;
 }
 
 // Returns 0 in the word_count field if p_list is NULL.
@@ -77,9 +75,13 @@ struct word_entry get_first_word( struct linked_list *p_list )
 struct word_entry get_next_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-	
-	entry.word_count = 0 ;		// cover end of list case.
-	
+	if((p_list==NULL)||(p_list->p_current==NULL)||(p_list->p_current->p_next==NULL)){
+		entry.word_count = 0 ;
+		return entry ;
+	}
+	entry.unique_word = p_list->p_current->p_next->one_word.unique_word ;
+	entry.word_count = p_list->p_current->p_next->one_word.word_count ;
+	p_list->p_current = p_list->p_current->p_next ;
 	return entry ;
 }
 
