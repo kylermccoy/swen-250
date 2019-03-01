@@ -26,15 +26,18 @@ Observations:
 ================================================================
 get_first_word
 Start
-Estimated Time	HH MM
+Estimated Time	01 00
 Plan:
 (Order of implementation, testing approach, etc.)
-
+	follow the instructions from the comments at the top of
+	the code, implement as the instructions state, run tests
+	if the tests fail check the unit tests to see why
 Complete
-Actual Time	HH MM
+Actual Time	00 15
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	the comment codes made it easy to implement without 
+	any issues
 
 ================================================================
 get_next_word
