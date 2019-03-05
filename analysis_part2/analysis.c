@@ -51,7 +51,7 @@ int read_file( struct linked_list *p_list, char *file_name )
 	if((file_name==NULL)||(file_name[0]=='\0')||(p_list==NULL)){
 		return 0 ;
 	}
-	FILE *input_file = fopen(filename,"r") ;
+	FILE *input_file = fopen(file_name,"r") ;
 
         if ( input_file == NULL ){
                 return 0 ;
