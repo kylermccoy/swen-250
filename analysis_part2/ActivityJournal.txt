@@ -72,15 +72,16 @@ Observations:
 ================================================================
 get_prev_word
 Start
-Estimated Time	HH MM
+Estimated Time	00 10
 Plan:
 (Order of implementation, testing approach, etc.)
-
+	follow the code instructions, implement the same 
+	structure from get_next_word
 Complete
-Actual Time	HH MM
+Actual Time	00 03
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	implemented the same code as get_next_word
 
 ================================================================
 read_file through test 56

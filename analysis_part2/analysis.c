@@ -90,10 +90,14 @@ struct word_entry get_next_word( struct linked_list *p_list )
 struct word_entry get_prev_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-	
-	entry.word_count = 0 ;		// cover end of list case.
-	
-	return entry ;
+        if((p_list==NULL)||(p_list->p_current==NULL)||(p_list->p_current->p_previous==NULL)){
+                entry.word_count = 0 ;
+                return entry ;
+        }
+        entry.unique_word = p_list->p_current->p_previous->one_word.unique_word ;
+        entry.word_count = p_list->p_current->p_previous->one_word.word_count ;
+        p_list->p_current = p_list->p_current->p_previous ;
+        return entry ;
 }
 
 // Returns 0 in the word_count field if the p_list pointer is NULL.
