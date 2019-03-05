@@ -8,6 +8,17 @@
 #include "analysis.h"
 #include "unit_tests.h"
 
+// Helper function for read_file to validate inputs.
+static FILE *validate_read_file_parameters( struct linked_list *p_list, char *file_name )
+{
+	if ( p_list == NULL || file_name == NULL || *file_name == '\0' )	// if NULL list or if a bad or empty file name string return 0
+		return 0 ;
+	
+	return fopen( file_name, "r" ) ;
+}
+
+
+
 // First checks that p_list is not NULL. Returns 0 if p_list is a NULL pointer.
 // Then checks that word pointer is not NULL and word is not any empty string.
 // Returns 0 if either of the above tests on the passed word fails.
@@ -21,23 +32,9 @@
 // For simplicity all words passed from the unit tests are all lower case only.
 int process_word ( struct linked_list *p_list, char *word )
 {
-	if((p_list==NULL)||(word==NULL)||(word[0]=='\0')){
-		return 0 ;
-	}
-	if(p_list->p_head==NULL){
-		add_node_at_head(p_list,word) ;
-		return 1 ;
-	}
-	int check = find_word(p_list,word) ;
-	if(check==1){
-		p_list->p_current->one_word.word_count++ ;
-		return 1 ;
-	}
-	if(check==0){
-		add_node_after_current(p_list,word);
-		return 1 ;
-	}
-	return 0 ;
+	int status = 0 ;
+
+	return status ;
 }
 
 // First checks that the passed string with the file name is not a NULL pointer and is not an empty string.
@@ -48,28 +45,26 @@ int process_word ( struct linked_list *p_list, char *word )
 // NOTE -- this function MUST convert all words read to lower case only! e.g "First" becomes "first"
 int read_file( struct linked_list *p_list, char *file_name )
 {
-	if((file_name==NULL)||(file_name[0]=='\0')||(p_list==NULL)){
+	FILE *input_file = validate_read_file_parameters( p_list, file_name ) ;
+	
+	if ( input_file == NULL )
 		return 0 ;
+	
+	// Now read and process the entire file.
+	char one_char ;
+	char buffer[ MAX_WORD + 1 ] ;
+	int index = 0 ;
+	int in_a_word = 0 ;
+	int word_count = 0 ;
+	
+	for ( one_char = fgetc( input_file ) ; one_char != EOF ; one_char = fgetc( input_file ) )
+	{
+		// Process all of the characters in the file one at a time.
 	}
-	FILE *input_file = fopen(filename,"r") ;
+	
+	fclose( input_file ) ;
 
-        if ( input_file == NULL ){
-                return 0 ;
-	}
-        // Now read and process the entire file.
-        char one_char ;
-        char buffer[ MAX_WORD + 1 ] ;
-        int index = 0 ;
-        int in_a_word = 0 ;
-        int word_count = 0 ;
-
-        for ( one_char = fgetc( input_file ) ; one_char != EOF ; one_char = fgetc( input_file ) ) {
-                // Process all of the characters in the file one at a time.
-        }
-
-        fclose( input_file ) ;
-
-        return word_count ;
+	return word_count ;
 }
 
 // Returns 0 in the word_count field if the p_list pointer is NULL.
@@ -77,13 +72,11 @@ int read_file( struct linked_list *p_list, char *file_name )
 // Otherwise, returns a struct with the first unique word and its number of occurrences in the text file.
 struct word_entry get_first_word( struct linked_list *p_list )
 {
-	if((p_list==NULL)||(p_list->p_head==NULL)){
-		struct word_entry entry ;
-		entry.word_count = 0 ;
-		return entry ;
-	}
-	p_list->p_current = p_list->p_head ;
-	return p_list->p_head->one_word ;
+	struct word_entry entry ;
+	
+	entry.word_count = 0 ;		// cover empty list case.
+	
+	return entry ;
 }
 
 // Returns 0 in the word_count field if p_list is NULL.
@@ -92,13 +85,9 @@ struct word_entry get_first_word( struct linked_list *p_list )
 struct word_entry get_next_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-	if((p_list==NULL)||(p_list->p_current==NULL)||(p_list->p_current->p_next==NULL)){
-		entry.word_count = 0 ;
-		return entry ;
-	}
-	entry.unique_word = p_list->p_current->p_next->one_word.unique_word ;
-	entry.word_count = p_list->p_current->p_next->one_word.word_count ;
-	p_list->p_current = p_list->p_current->p_next ;
+	
+	entry.word_count = 0 ;		// cover end of list case.
+	
 	return entry ;
 }
 
@@ -107,14 +96,10 @@ struct word_entry get_next_word( struct linked_list *p_list )
 struct word_entry get_prev_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-        if((p_list==NULL)||(p_list->p_current==NULL)||(p_list->p_current->p_previous==NULL)){
-                entry.word_count = 0 ;
-                return entry ;
-        }
-        entry.unique_word = p_list->p_current->p_previous->one_word.unique_word ;
-        entry.word_count = p_list->p_current->p_previous->one_word.word_count ;
-        p_list->p_current = p_list->p_current->p_previous ;
-        return entry ;
+	
+	entry.word_count = 0 ;		// cover end of list case.
+	
+	return entry ;
 }
 
 // Returns 0 in the word_count field if the p_list pointer is NULL.
@@ -123,13 +108,9 @@ struct word_entry get_prev_word( struct linked_list *p_list )
 struct word_entry get_last_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-	if((p_list==NULL)||(p_list->p_tail==NULL)){
-		entry.word_count = 0 ;
-		return entry ;
-	}
-	entry.unique_word = p_list->p_tail->one_word.unique_word ;
-	entry.word_count = p_list->p_tail->one_word.word_count ;
-	p_list->p_current = p_list->p_tail ;
+	
+	entry.word_count = 0 ;		// cover empty list case.
+	
 	return entry ;
 }
 
@@ -147,21 +128,21 @@ struct word_entry get_last_word( struct linked_list *p_list )
 int write_unique_word_list_to_csv_file(  struct linked_list *p_list, char *file_name )
 {
 	int status = 0 ;
+	
+	if ( p_list == NULL || p_list->p_head == NULL )
+		return status ;
+	
+	if ( file_name == NULL || *file_name == '\0' )
+		return status ;
+	
+	FILE *out_file = fopen( file_name, "w" ) ;
+	
+	if ( out_file )
+	{
+		// In a loop write out the file
+		
+		fclose( out_file ) ;
+	}
 
-        if ( p_list == NULL || p_list->p_head == NULL )
-                return status ;
-
-        if ( file_name == NULL || *file_name == '\0' )
-                return status ;
-
-        FILE *out_file = fopen( file_name, "w" ) ;
-
-        if ( out_file )
-        {
-                // In a loop write out the file
-
-                fclose( out_file ) ;
-        }
-
-        return status ;
+	return status ;
 }
