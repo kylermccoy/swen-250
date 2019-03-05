@@ -57,15 +57,17 @@ Observations:
 ================================================================
 get_last_word
 Start
-Estimated Time	HH MM
+Estimated Time	00 30
 Plan:
 (Order of implementation, testing approach, etc.)
-
+	follow the steps from get_first_word and get_next_word
+	implement the same structure, follow the code instructions
 Complete
-Actual Time	HH MM
+Actual Time	00 10
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	function followed the same structure as the previous two 
+	functions making implementation quick and simple
 
 ================================================================
 get_prev_word

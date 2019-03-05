@@ -102,9 +102,13 @@ struct word_entry get_prev_word( struct linked_list *p_list )
 struct word_entry get_last_word( struct linked_list *p_list )
 {
 	struct word_entry entry ;
-	
-	entry.word_count = 0 ;		// cover empty list case.
-	
+	if((p_list==NULL)||(p_list->p_tail==NULL)){
+		entry.word_count = 0 ;
+		return entry ;
+	}
+	entry.unique_word = p_list->p_tail->one_word.unique_word ;
+	entry.word_count = p_list->p_tail->one_word.word_count ;
+	p_list->p_current = p_list->p_tail ;
 	return entry ;
 }
 
