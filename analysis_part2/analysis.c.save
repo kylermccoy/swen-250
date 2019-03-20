@@ -60,20 +60,12 @@ int read_file( struct linked_list *p_list, char *file_name )
         char one_char ;
         char buffer[ MAX_WORD + 1 ] ;
         int index = 0 ;
+        int in_a_word = 0 ;
         int word_count = 0 ;
 
         for ( one_char = fgetc( input_file ) ; one_char != EOF ; one_char = fgetc( input_file ) ) {
                 // Process all of the characters in the file one at a time.
-		if(isspace(one_char) && index != 0) {
-			word_count++ ;
-			buffer[index] = '\0' ;
-			process_word(p_list, buffer) ;
-			index = 0 ;
-			buffer[0] = '\0' ;
-		}else if(isalpha(one_char)) {
-			buffer[index] = tolower(one_char) ;
-			index++ ;
-		}
+		
         }
 
         fclose( input_file ) ;
@@ -168,13 +160,7 @@ int write_unique_word_list_to_csv_file(  struct linked_list *p_list, char *file_
         if ( out_file )
         {
                 // In a loop write out the file
-		fprintf(out_file, "word, count\n") ;
-		struct word_entry word = get_first_word(p_list) ;
-		while(word.word_count != 0) {
-			fprintf(out_file, "%s, %d\n", word.unique_word, word.word_count) ;
-			word = get_next_word(p_list) ;
-		}
-		status++ ;
+
                 fclose( out_file ) ;
         }
 

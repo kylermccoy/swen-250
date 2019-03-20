@@ -86,41 +86,50 @@ Observations:
 ================================================================
 read_file through test 56
 Start
-Estimated Time	HH MM
+Estimated Time	01 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow a similar structure to the word count program
+	from an earlier activity, make changes to implementation
+	to add words to linked list
 
 Complete
-Actual Time	HH MM
+Actual Time	00 20
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	implemention proved to be simple, I didn't use one of the
+	int variables the default skeleton included
 
 ================================================================
 read_file MLK_dream_excerpt only
 Start
-Estimated Time	HH MM
+Estimated Time	00 10
 Plan:
 (Order of implementation, testing approach, etc.)
+	make edits to match the file example
 
 Complete
-Actual Time	HH MM
+Actual Time	00 05
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	implementation was simple and worked well, worked
+	fine from original read_file tests 
 
 ================================================================
 write_unique_word_list_to_csv_file
 Start
-Estimated Time	HH MM
+Estimated Time	00 45
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow skeletion implementation and use previous 
+	functions
 
 Complete
-Actual Time	HH MM
+Actual Time	00 20
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	implementation was simple and I used the previous 
+	functions to easily implement the code
 
 ================================================================
 Add four unit tests to the unit_tests_student.c file
