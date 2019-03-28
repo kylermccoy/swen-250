@@ -25,11 +25,13 @@ Plan:
 	follow same strategy from previous 
 
 Complete
-Actual Time	00 01
+Actual Time	00 02
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
 	used the same structure but changed code slightly to 
-	match necessary implementation
+	match necessary implementation, expected to be able to
+	use commas for where functionality but realized and was 
+	needed instead
 
 ================================================================
 Query 3: Find the name, number, and team of all outfielders (positions 7 through 9) who are 25 years old or younger
