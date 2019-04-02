@@ -116,7 +116,7 @@ SELECT '' ; SELECT 'Query 10' ;
 -- begins with 'D'
 
 SELECT Player.name, Position.title from Position, Player where Player.position = 
-Position.posnum and substr(Player.name,1,1) = 'D' ;
+Position.posnum and Player.name LIKE "D%" ;
 
 .headers off
 SELECT '' ;
