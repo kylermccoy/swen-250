@@ -1,13 +1,16 @@
 SWEN-250 Activity Reflection
 Ruby - Factorial with Unit Testing
 
-Name:
+Name:	Kyle McCoy
 
 ================================================================
 Start
-Estimated Time	HH MM
+Estimated Time	01 00
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow steps from assignment, implement as it is 
+	required, check powerpoint or interent for help
+	if any problems or errors occur
 
 Complete
 Actual Time	HH MM
