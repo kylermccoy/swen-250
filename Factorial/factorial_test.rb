@@ -18,4 +18,10 @@ class FactorialTest < MiniTest::Test #This is a class. (It's ok if you don't kno
     assert_equal 1, factorial(0), "0! should be 1"
   end
 
+  def test_negative
+    assert_raises RangeError do
+      factorial(-1)
+    end
+  end
+
 end

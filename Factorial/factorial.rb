@@ -5,6 +5,9 @@
 
 def factorial(n)
   # Write the factorial code here per the activity
+  if n < 0
+    raise RangeError
+  end
   total = 1 
   while n > 0
     total *= n
