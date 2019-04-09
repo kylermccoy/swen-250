@@ -5,4 +5,10 @@
 
 def factorial(n)
   # Write the factorial code here per the activity
+  total = 1 
+  while n > 0
+    total *= n
+    n -= 1
+  end
+  n = total
 end
