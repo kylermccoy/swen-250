@@ -5,6 +5,9 @@
 
 def factorial(n)
   # Write the factorial code here per the activity
+  unless n.is_a? Integer
+    raise TypeError
+  end
   if n < 0
     raise RangeError
   end

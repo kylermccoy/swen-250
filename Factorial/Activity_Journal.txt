@@ -13,10 +13,11 @@ Plan:
 	if any problems or errors occur
 
 Complete
-Actual Time	HH MM
+Actual Time	00 30
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	followed steps from assignement, used the documentation
+	provided for assertions, ran test and all worked well
 
 ================================================================
 

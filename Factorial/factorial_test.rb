@@ -24,4 +24,10 @@ class FactorialTest < MiniTest::Test #This is a class. (It's ok if you don't kno
     end
   end
 
+  def test_string
+    assert_raises TypeError do
+      factorial("test")
+    end
+  end
+
 end
