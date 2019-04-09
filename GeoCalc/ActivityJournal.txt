@@ -1,19 +1,22 @@
 SWEN-250 Activity Reflection
 Ruby - GeoCalc
 
-Name:
+Name:	Kyle McCoy
 
 ================================================================
 Start activity 1 -- complete and test the Line class in line.rb
-Estimated Time	HH MM
+Estimated Time	00 30
 Plan:
 (Order of implementation, testing approach, etc.)
+	uses distance formula to determine length between lines,
+	use tests for zero, negatives, and positives
 
 Complete
-Actual Time	HH MM
+Actual Time	00 10
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	test cases went without a hitch, implementation of length
+	was a success
 
 ================================================================
 

@@ -16,6 +16,8 @@ class Circle
   # (The radius is the distance between the two points).
   def initialize(center = Point.new, on_circle = Point.new)
 ## TO BE FILLED IN BY STUDENT
+    @center = center
+    @radius = Math.sqrt( ((center.x - on_circle.x)**2)+((center.y - on_circle.y)**2) )
   end
 
   # Methods below are public
@@ -28,6 +30,7 @@ class Circle
   # This *MUST* be written using the radius method.
   def diameter
 ## TO BE FILLED IN BY STUDENT
+    
   end
 
   # Circle circumerence
