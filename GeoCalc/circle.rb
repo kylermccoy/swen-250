@@ -30,19 +30,21 @@ class Circle
   # This *MUST* be written using the radius method.
   def diameter
 ## TO BE FILLED IN BY STUDENT
-    
+    diameter = @radius * 2  
   end
 
   # Circle circumerence
   # This *MUST* be written using the diameter method.
   def circumference
 ## TO BE FILLED IN BY STUDENT
+    circumference = Math::PI * self.diameter
   end
 
   # Circle area
   # This *MUST* be written using the radius method.
   def area
 ## TO BE FILLED IN BY STUDENT
+    area = Math::PI * @radius**2
   end
 
   def to_s
