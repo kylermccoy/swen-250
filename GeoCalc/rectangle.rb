@@ -13,6 +13,8 @@ class Rectangle
   # The instance variables are @c1 and @c2
   def initialize(c1 = Point.new, c2 = Point.new)
 ## TO BE FILLED IN BY STUDENT
+    @c1 = c1
+    @c2 = c2
   end
 
   # Methods below are public
@@ -26,22 +28,34 @@ class Rectangle
   # You must define the method named 'width' in its entirety. Use the code in
   # line.rb and circle.rb as templates for creating such a method.
 ## TO BE FILLED IN BY STUDENT
+  def width
+    width = ( @c1.x - @c2.x ).abs
+  end
 
   # Return the height of the rectangle (absolute value of difference between
   # the corner Y coordinates).
   # You must define the method named 'height' in its entirety. Use the code in
   # line.rb and circle.rb as templates for creating such a method.
 ## TO BE FILLED IN BY STUDENT
+  def height
+    height = ( @c1.y - @c2.y ).abs
+  end
 
   # Return the perimeter of the rectangle.
   # You must define the method named 'perimeter' in its entirety.
   # This *MUST* be written using the width and height methods
 ## TO BE FILLED IN BY STUDENT
+  def perimeter
+    perimeter = (self.height * 2) + (self.width * 2)
+  end
 
   # Return the area of the rectangle
   # You must define the method named 'area' in its entirety.
   # This *MUST* be written using the width and height methods
 ## TO BE FILLED IN BY STUDENT
+  def area
+    area = self.height * self.width
+  end
 
   def to_s
     "Rectangle corners #{c1} and #{c2}"
