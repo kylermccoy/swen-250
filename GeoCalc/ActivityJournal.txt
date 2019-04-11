@@ -21,27 +21,33 @@ Observations:
 ================================================================
 
 Start activity 2 -- complete and test the Circle class in circle.rb
-Estimated Time	HH MM
+Estimated Time	00 20
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow steps from comments in the code, follow similar
+	style and format of line
 
 Complete
-Actual Time	HH MM
+Actual Time	00 15
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	took a bit longer, had to figure out proper calling
+	methods of the variable and the methods
 
 ================================================================
 
 Start activity 3 -- complete and test the Rectangle class in rectangle.rb
-Estimated Time	HH MM
+Estimated Time	00 15
 Plan:
 (Order of implementation, testing approach, etc.)
+	follow similar implementation to circle, follow the 
+	example and plan in the comments
 
 Complete
-Actual Time	HH MM
+Actual Time	00 05
 Observations:
 (Lessons learned, problems encountered, obstacles overcome, etc.)
-
+	took long only because of defining the methods, same
+	implementation style and example as circle
 
 ================================================================
