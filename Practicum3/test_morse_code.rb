@@ -39,4 +39,12 @@ class MorseCodeTest < Test::Unit::TestCase
     assert_equal "- . ... - ", to_morse("test")
   end
 
+  def test_from_morse_with_quit
+    assert_equal "QUIT", from_morse("--.- ..- .. -")
+  end
+
+  def test_to_morse_with_quit
+    assert_equal "--.- ..- .. - ", to_morse("quit")
+  end
+
 end
