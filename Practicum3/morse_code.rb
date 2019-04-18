@@ -110,4 +110,5 @@ def main_input
 end
 
 # Uncomment the line below to run as console input
+# console input works, only commented it out again because it blocks test_morse
 #main_input
