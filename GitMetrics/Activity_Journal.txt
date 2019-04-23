@@ -1,0 +1,24 @@
+SWEN-250 Activity Reflection
+Ruby - Git Repository Metrics
+
+Name: Kyle McCoy
+
+================================================================
+Start
+Estimated Time	01 00
+Plan:
+(Order of implementation, testing approach, etc.)
+	Check out the text files that will be used to see the 
+	format that will be used, implement each function one
+	at a time and test often to ensure it runs
+
+Complete
+Actual Time	01 00
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+	implementation of the first two functions proved simple
+	and as expected, the problems came in with the third
+	function and learning how to use DateTime properly
+
+================================================================
+
