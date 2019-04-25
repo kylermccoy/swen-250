@@ -24,15 +24,16 @@ class Log
   
   #Adds a LogItem to the Log for the given date and name, returns true if successful, false otherwise
   def add_logItem(name, date)
- 
-  
     #If there are already entries for logItem's date, add the LogItem
     #Otherwise add a new entry for logItem's date and add the LogItem to its list
-     
-	 
-	#FILL IN
-	
-    false
+    if !@log.has_key?(date)
+      @size += 1
+      @log[date] = [LogItem.new(name, date)
+      return true
+    end
+    @size += 1
+    @log[date] << LogItem.new(name, date)
+    return true
   end
   
   #Removes a LogItem from the Log for the given date and name

@@ -31,38 +31,48 @@ class FoodDB
   #Returns true if a BasicFood with the name foodName exists in the database
   def contains_food?(foodName)
     contains = false
-     
-	#FILL IN
-	
+    @basicFoods.each { |food| 
+      if food.name == foodName
+        contains = true
+      end
+    }
     contains
   end
   
   #Returns true if a Recipe with the name recipeName exists in the database
   def contains_recipe?(recipeName)
     contains = false
-    
-	#FILL IN
-	
+    @recipes.each { |rec|
+      if rec.name == recipeName
+        contains = true
+      end
+    }
     contains
   end
   
   #Returns true if there exists some entry in the database with the name itemName
   def contains?(itemName)
-  
-	#FILL IN
-	
+    contains_food?(itemName) || contains_recipe?(itemName)
   end
   
   #Returns the BasicFood of the given name if it exists within the database, nil otherwise
   def get_food(foodName)
- 
-	#FILL IN
+    @basicFoods.each { |food|
+      if food.name == foodName
+        return food
+      end
+    }
+    return nil
   end
   
   #Returns the Recipe of the given name if it exists within the database, nil otherwise
   def get_recipe(recipeName)
-
-	#FILL IN
+    @recipes.each { |rec|
+      if rec.name == recipeName
+        return rec
+      end
+    }
+    return nil
   end
   
   #Returns the item of the given name if it exists within the database, nil otherwise
@@ -70,33 +80,65 @@ class FoodDB
     #If the item is a BasicFood and is in the database, return it
     #Else, if the item is a Recipe and is in the database, return it
     #Return nil otherwise
-
-	#FILL IN
+    food = get_food(itemName)
+    if food != nil
+      return food
+    end
+    rec = get_recipe(itemName)
+    if rec != nil
+      return rec
+    end
+    return nil
   end
   
   #Returns a list of all items in the database that begin with the given prefix
   def find_matches(prefix)
-    
-	#FILL IN
-	
+    items = []
+    @basicFoods.each { |food|
+      if food.name.start_with?(prefix)
+        items << food
+      end
+    }	
+    @recipes.each { |rec|
+      if rec.name.start_with?(prefix)
+        items << rec
+      end
+    }
+    return items
   end
   
   #Constructs a new BasicFood and adds it to the database, returns true if successful, false otherwise
   def add_basicFood(name, calories)
     #Don't add if it is already in the database
-	
-	#FILL IN
- 
-    false
+    check = contains_food?(name)
+    if check
+      return false
+    end
+    food = BasicFood.new(name, calories)
+    @basicFoods << food
+    @size += 1
+    return true
   end
   
   #Constructs a new Recipe and adds it to the database, returns true if successful, false otherwise
   def add_recipe(name, ingredientNames)
     #Don't add if it is already in the database
-     
-	#FILL IN
-	 
-    false
+    check = contains_recipe?(name)
+    if check
+      return false
+    end
+    ingredients = []
+    ingredientNames.each { |name| 
+      food = get(name)
+      if food == nil
+        return false
+      end
+      ingredients << food
+    }
+    rec = Recipe.new(name, ingredients)
+    @recipes << rec
+    @size += 1
+    return true
   end
   
   #Saves the database to @dbFile

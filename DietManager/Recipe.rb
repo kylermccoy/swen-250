@@ -10,9 +10,9 @@ class Recipe
     @calories = 0
     
     #Calculate the total calories in this Recipe
-  
-	#FILL IN
-	
+    @ingredients.each do |item|
+      @calories += item.calories
+    end
   end
   
   #Returns a string representation of this Recipe formatted for printing
@@ -20,9 +20,10 @@ class Recipe
     result = ""
     
     #Build the string we are going to print
-
-	#FILL IN
-	
+    result += @name + " " + @calories
+    @ingredients.each do |item|
+      result += "\n  " + item.to_s 
+    end	
     result
   end
 end
