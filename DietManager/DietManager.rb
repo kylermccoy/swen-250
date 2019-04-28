@@ -84,23 +84,22 @@ class DietManager
   #Handles the 'find' command which prints information on all items in the FoodDB matching a certain prefix
   def command_find(prefix)
     puts "\n"
-    @database.basicFoods.each { |food|
-      if food.name.start_with?(prefix)
-        puts food
-      end
-    }
-    puts "\n"
-    @database.recipes.each { |rec|
-      if rec.name.start_with?(prefix)
-        puts rec
-      end
+    arr = @database.find_matches(prefix)
+    arr.each { |item|
+      puts item
     }
     puts "\n"
   end
 
   #Handles both forms of the 'log' command which adds a unit of the named item to the log for a certain date
   def command_log(name, date = Date.today)
- 
+    if !@database.contains?(name)
+      puts "Error: Food not in database!"
+      return 0
+    end 
+    @log.add_logItem(name, date)
+    @logChanged = true
+    puts "\n"
   end
 
   #Handles the 'delete' command which removes one unit of the named item from the log for a certain date
@@ -115,7 +114,25 @@ class DietManager
 
   #Handles the 'show all' command which displays the entire log of items
   def command_showAll
-
+    puts "\n"
+    items = @log.get_entries(nil)
+    start = items[0].date
+    date_tokens = start.to_s.split("-")
+    time = "#{date_tokens[1]}/#{date_tokens[2]}/#{date_tokens[0]}"
+    puts time
+    items.each { |logitem|
+      name = logitem.name.strip
+      if logitem.date == start
+        puts "  #{name}"
+      else
+        start = logitem.date
+        date_tokens = start.to_s.split("-")
+        time = "#{date_tokens[1]}/#{date_tokens[2]}/#{date_tokens[0]}"
+        puts time
+        puts "  #{name}"
+      end
+    }
+    puts "\n"
   end
   
 end #end DietManager class
@@ -164,6 +181,21 @@ $stdin.each{|line|
       ingredients << ingredient.strip
     }
     dietManager.command_newRecipe(rec_name, ingredients)
+  elsif line.start_with?("log")
+    tokens = line.split(" ")
+    tokens.shift
+    resp = tokens.join(" ")
+    log_tokens = resp.split(",")
+    if log_tokens.length == 1
+      dietManager.command_log(log_tokens[0], Date.today)
+    end
+    if log_tokens == 2
+      name = log_tokens[0]
+      date = log_tokens[1].split
+      dietManager.command_log(name, date)
+    end
+  elsif line.start_with?("show all")
+    dietManager.command_showAll
   else
     puts "Unknown command!"
   end
