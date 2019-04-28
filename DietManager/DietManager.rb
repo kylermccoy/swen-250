@@ -16,12 +16,12 @@ class DietManager
   
   #Handles the 'quit' command which exits the DietManager
   def command_quit
-  
+    command_save
   end
   
   #Handles the 'save' command which saves the FoodDB and Log if necessary
   def command_save
- 
+    @database.save
   end
 
   #Handles the 'new food' command which adds a new BasicFood to the FoodDB
@@ -41,7 +41,15 @@ class DietManager
 
   #Handles the 'print all' command which prints all items in the FoodDB
   def command_printAll
- 
+    puts "\n"
+    @database.basicFoods.each { |food|
+      puts food
+    }
+    puts "\n"
+    @database.recipes.each { |rec|
+      puts rec
+    }
+    puts "\n"
   end
 
   #Handles the 'find' command which prints information on all items in the FoodDB matching a certain prefix
@@ -80,10 +88,17 @@ puts "Input a command > "
 
 #Read commands from the user through the command prompt
 $stdin.each{|line|
- 
   
 #Handle the input
+  if line.start_with?("quit") || line == "\n"
+    dietManager.command_quit
+    break
+  elsif line.start_with?("print all")
+    dietManager.command_printAll
+  else
+    puts "Unknown command!"
+  end
   
- } #closes each iterator
+} #closes each iterator
 
 #end MAIN

@@ -20,9 +20,9 @@ class Recipe
     result = ""
     
     #Build the string we are going to print
-    result += @name + " " + @calories
+    result += "#{name} #{calories}"
     @ingredients.each do |item|
-      result += "\n  " + item.to_s 
+      result += "\n  #{item}" 
     end	
     result
   end

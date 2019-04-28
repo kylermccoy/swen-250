@@ -9,6 +9,6 @@ class BasicFood
   
   #Returns a string representation of this BasicFood formatted for printing
   def to_s
-    return "" + @name + " " + @calories
+    return "#{name} #{calories}"
   end
 end
