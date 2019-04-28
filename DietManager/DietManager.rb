@@ -36,7 +36,7 @@ class DietManager
 
   #Handles the 'print' command which prints a single item from the FoodDB
   def command_print(name)
-
+    puts @database.get(name)
   end
 
   #Handles the 'print all' command which prints all items in the FoodDB
@@ -54,7 +54,17 @@ class DietManager
 
   #Handles the 'find' command which prints information on all items in the FoodDB matching a certain prefix
   def command_find(prefix)
-  
+    @database.basicFoods.each { |food|
+      if food.name.start_with?(prefix)
+        puts food
+      end
+    }
+    @database.recipes.each { |rec|
+      if rec.name.start_with?(prefix)
+        puts rec
+      end
+    }
+    puts "\n"
   end
 
   #Handles both forms of the 'log' command which adds a unit of the named item to the log for a certain date
@@ -95,6 +105,12 @@ $stdin.each{|line|
     break
   elsif line.start_with?("print all")
     dietManager.command_printAll
+  elsif line.start_with?("print")
+    tokens = line.split(" ")
+    dietManager.command_print(tokens[1])
+  elsif line.start_with?("find")
+    tokens = line.split(" ")
+    dietManager.command_find(tokens[1])
   else
     puts "Unknown command!"
   end
