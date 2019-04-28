@@ -43,21 +43,21 @@ Actual Time  00 05
 Lessons learned, problems encountered, obstacles overcome, etc.
 	easy implementation, no problems encountered
 
-Part 1: Log.rb & LogTest.rb
+Part 1: LogItem.rb & LogItemTest.rb
 Estimated Time  00 20
 Plan for this level:
         implement as comments and follow similar pattern to
-	previous code
+	previous code and BasicFood and Recipe
 
 Actual Time  00 15
 Lessons learned, problems encountered, obstacles overcome, etc.
         no problems, implementation went as expected
 
-Part 1: LogItem.rb & LogItemTest.rb
+Part 1: Log.rb & LogTest.rb
 Estimated Time  00 30
 Plan for this level:
         implement as the comments explain to, follow similar
-	implementation and planning that Log.rb required
+	implementation and planning that FoodDB.rb required
 
 Actual Time  00 20
 Lessons learned, problems encountered, obstacles overcome, etc.
@@ -65,8 +65,11 @@ Lessons learned, problems encountered, obstacles overcome, etc.
 	done
 
 Part 1 – Product & Unit Test Classes – Completed
-Actual Time	HH MM
+Actual Time	01 05
 Lessons learned, problems encountered, obstacles overcome, etc.
+	Most of the implementation for the project was already
+	filled in mainly the tests in that regard, and implementing
+	the rest of the code was easy thanks to the commenting
 
 ================================================================
 Part 2 – DietManager Levels – Start

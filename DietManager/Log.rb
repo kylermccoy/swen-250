@@ -28,7 +28,7 @@ class Log
     #Otherwise add a new entry for logItem's date and add the LogItem to its list
     if !@log.has_key?(date)
       @size += 1
-      @log[date] = [LogItem.new(name, date)
+      @log[date] = [LogItem.new(name, date)]
       return true
     end
     @size += 1
@@ -38,23 +38,52 @@ class Log
   
   #Removes a LogItem from the Log for the given date and name
   def remove_logItem(name, date)
-     
-	 #FILL IN
-    nil
+    removed = nil
+    mark = @log[date]
+    if mark == nil
+      return removed
+    end
+    mark.each { |logitem|
+      if logitem.name == name
+        removed = logitem
+        mark.delete(logitem)
+        @size -= 1
+      end
+    }
+    return removed
   end
   
   #Returns true if there is an entry for this date with the given name, false otherwise
   def contains?(name, date)
-   
-    #FILL IN
-    false
+    mark = @log[date]
+    if mark == nil
+      return false
+    end
+    mark.each { |logitem|
+      if logitem.name == name
+        return true
+      end
+    }
+    return false
   end
   
   #Returns an Array of LogItems for the given date, nil if there are no entries for the date
   #If no date is passed, returns all entries in the Log
   def get_entries(date = nil)
-	#FILL IN
-
+    if date != nil
+      mark = @log[date]
+      if mark == []
+        return nil
+      end
+      return mark
+    end
+    arr = Array.new
+    @log.each_value{ |value|
+      value.each { |logitem|
+        arr << logitem
+      }
+    }
+    return arr
   end
   
   #Saves the log to @logFile
