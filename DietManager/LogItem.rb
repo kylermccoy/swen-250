@@ -13,6 +13,6 @@ class LogItem
   def to_s
     date_tokens = @date.to_s.split("-")
     date_string = "#{date_tokens[1]}/#{date_tokens[2]}/#{date_tokens[0]}"
-    return "#{date_string}, #{name}"
+    return "#{date_string},#{name}"
   end
 end

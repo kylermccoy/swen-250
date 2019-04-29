@@ -36,35 +36,36 @@ class DietManager
 
   #Handles the 'new food' command which adds a new BasicFood to the FoodDB
   def command_newFood(name, calories)
-    if @database.contains_food?(name)
+    if @database.contains_food?(name.strip)
       puts "Error: Food already in database!"
       return 0 
     end
-    @database.add_basicFood(name, calories)
+    @database.add_basicFood(name.strip, calories)
     @dbChanged = true
     puts "\n"
   end
 
   #Handles the 'new recipe' command which adds a new Recipe to the FoodDB
   def command_newRecipe(name, ingredients)
-    if @database.contains_recipe?(name)
+    if @database.contains_recipe?(name.strip)
       puts "Error: Recipe already in database!"
       return 0
     end
     ingredients.each { |food|
-      if !@database.contains?(food)
+      if !@database.contains?(food.strip)
         puts "Error: Ingredient not in database!"
         return 0
       end
     }
-    @database.add_recipe(name, ingredients)
+    @database.add_recipe(name.strip, ingredients)
     @dbChanged = true
     puts "\n"
   end
 
   #Handles the 'print' command which prints a single item from the FoodDB
   def command_print(name)
-    puts @database.get(name)
+    puts "\n"
+    puts @database.get(name.strip)
     puts "\n"
   end
 
@@ -95,6 +96,7 @@ class DietManager
   def command_log(name, date = Date.today)
     if !@database.contains?(name)
       puts "Error: Food not in database!"
+      puts "\n"
       return 0
     end 
     @log.add_logItem(name, date)
@@ -104,12 +106,27 @@ class DietManager
 
   #Handles the 'delete' command which removes one unit of the named item from the log for a certain date
   def command_delete(name, date)
- 
+    if !@database.contains?(name)
+      puts "Error: Food not in database!"
+      puts "\n"
+      return 0
+    end
+    @log.remove_logItem(name, date)
+    @logChanged = true
+    puts "\n"
   end
 
   #Handles both forms of the 'show' command which displays the log of items for a certain date
   def command_show(date = Date.today)
- 
+    puts "\n"
+    items = @log.get_entries(date)
+    if items == nil
+      return 0
+    end
+    items.each { |item|
+      puts item.name.strip
+    }
+    puts "\n"
   end
 
   #Handles the 'show all' command which displays the entire log of items
@@ -187,15 +204,36 @@ $stdin.each{|line|
     resp = tokens.join(" ")
     log_tokens = resp.split(",")
     if log_tokens.length == 1
-      dietManager.command_log(log_tokens[0], Date.today)
-    end
-    if log_tokens == 2
-      name = log_tokens[0]
-      date = log_tokens[1].split
+      dietManager.command_log(log_tokens[0].strip, Date.today)
+    elsif log_tokens.length == 2
+      name = log_tokens[0].strip
+      date_string = log_tokens[1].strip
+      date_tokens = date_string.split("/")
+      date = Date.parse("#{date_tokens[2]}-#{date_tokens[0]}-#{date_tokens[1]}")
       dietManager.command_log(name, date)
     end
   elsif line.start_with?("show all")
     dietManager.command_showAll
+  elsif line.start_with?("show")
+    tokens = line.split(" ")
+    if tokens.length == 1
+      dietManager.command_show(Date.today)
+    elsif tokens.length == 2
+      date_string = tokens[1]
+      date_tokens = date_string.split("/")
+      date = Date.parse("#{date_tokens[2]}-#{date_tokens[0]}-#{date_tokens[1]}")
+      dietManager.command_show(date)
+    end
+  elsif line.start_with?("delete")
+    tokens = line.split(" ")
+    tokens.shift
+    resp = tokens.join(" ")
+    delt = resp.split(",")
+    name = delt[0].strip
+    date_string = delt[1].strip
+    date_tokens = date_string.split("/")
+    date = Date.parse("#{date_tokens[2]}-#{date_tokens[0]}-#{date_tokens[1]}")
+    dietManager.command_delete(name, date)
   else
     puts "Unknown command!"
   end

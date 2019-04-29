@@ -46,7 +46,7 @@ class Log
     mark.each { |logitem|
       if logitem.name == name
         removed = logitem
-        mark.delete(logitem)
+        @log[date].delete(logitem)
         @size -= 1
       end
     }
