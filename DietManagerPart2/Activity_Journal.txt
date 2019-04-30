@@ -1,0 +1,171 @@
+SWEN-250 Activity Journal
+Ruby – Diet Manager
+
+Name:	Kyle McCoy
+
+NOTE: Create additional Part 1 & 2 log entries 
+based on the order of implementation.
+
+================================================================
+Part 1 – Product & Unit Test Classes – Start
+Estimated Time  06 09	
+Plan for this level:
+	Implement each function in the class then write test
+	cases to each method after the class is done, correct
+	implementation errors as necessary
+
+----------------------------------------------------------------
+Part 1: FoodDB.rb & FoodDBTest.rb
+Estimated Time  00 45
+Plan for this level:
+	Implement each function following steps from the comments
+
+Actual Time  00 20
+Lessons learned, problems encountered, obstacles overcome, etc.
+	Only problem encountered was with adding a recipe that
+	contained another recipe, it was a quick fix to changing
+	get_food to get
+
+----------------------------------------------------------------
+Part 1: BasicFood.rb & BasicFoodTest.rb
+Estimated Time  00 10
+Plan for this level:
+	implement each function following the steps from comments
+
+Actual Time  00 05
+Lessons learned, problems encountered, obstacles overcome, etc.
+	Easy implementation, no problems, tests are annoying
+
+----------------------------------------------------------------
+Part 1: Recipe.rb & RecipeTest.rb
+Estimated Time  00 10
+Plan for this level:
+	implement as the comments explain to
+
+Actual Time  00 05
+Lessons learned, problems encountered, obstacles overcome, etc.
+	easy implementation, no problems encountered
+
+----------------------------------------------------------------
+Part 1: LogItem.rb & LogItemTest.rb
+Estimated Time  00 20
+Plan for this level:
+        implement as comments and follow similar pattern to
+	previous code and BasicFood and Recipe
+
+Actual Time  00 15
+Lessons learned, problems encountered, obstacles overcome, etc.
+        no problems, implementation went as expected
+
+----------------------------------------------------------------
+Part 1: Log.rb & LogTest.rb
+Estimated Time  00 30
+Plan for this level:
+        implement as the comments explain to, follow similar
+	implementation and planning that FoodDB.rb required
+
+Actual Time  00 20
+Lessons learned, problems encountered, obstacles overcome, etc.
+        implementation took a little bit longer but still easily
+	done
+
+----------------------------------------------------------------
+Part 1 – Product & Unit Test Classes – Completed
+Actual Time	01 05
+Lessons learned, problems encountered, obstacles overcome, etc.
+	Most of the implementation for the project was already
+	filled in mainly the tests in that regard, and implementing
+	the rest of the code was easy thanks to the commenting
+
+================================================================
+Part 2 – DietManager Levels – Start
+Estimated Time	08 00
+Plan for this level:
+	work slowly using previous code implementation strategy
+	to ensure implementation will work with previous code
+	read from the project assignment website for help or hints
+
+----------------------------------------------------------------
+Part 2: Level 1
+Estimated Time  00 30
+Plan for this level:
+	should be easy enough to make the input break if quit is 
+	typed in, print all should be a simple each loop
+
+Actual Time  00 15
+Lessons learned, problems encountered, obstacles overcome, etc.
+	implementation was quick and simple, most code already
+	written for me
+
+----------------------------------------------------------------
+Part 2: Level 2
+Estimated Time 00 30
+Plan for this level:
+	print should be an easy implementation as it just uses
+	get from the database, prefix should also be easy as
+	it uses find_matches
+
+Actual Time 00 15
+Lessons learned, problems encountered, obstacles overcome, etc.
+	implementation went as expected, no obstacles yet
+
+----------------------------------------------------------------
+Part 2: Level 3
+Estimated Time 00 30
+Plan for this level:
+	things should be getting more complicated as I have to
+	implement more checks for if the food is one word or two
+	words, and recipe will have a similar problem
+
+Actual Time  00 20
+Lessons learned, problems encountered, obstacles overcome, etc.
+	the only really difficult part was figuring out how to
+	ensure spaces are left in the name of the food before
+	being passed into the functions
+
+----------------------------------------------------------------
+Part 2: Level 4
+Estimated Time 00 30
+Plan for this level:
+	i can already see that finding away to separate how log 
+	is being called could be a pain, show all should be 
+	manageable with a loop
+
+Actual Time  00 40
+Lessons learned, problems encountered, obstacles overcome, etc.
+	there was an intial problem where i didn't realize i 
+	has to parse the Date into the function but quickly 
+	figured it out, the DietLog.txt kept getting spaced up
+	which made me changed my to string for LogItem
+
+----------------------------------------------------------------
+Part 2: Level 5
+Estimated Time 00 30
+Plan for this level:
+	implement show in the same style of log in terms of date
+	and passing things into the function, delete should be 
+	the similar to add
+
+Actual Time 00 30
+Lessons learned, problems encountered, obstacles overcome, etc.
+	implementation was pretty quick considering they were
+	similar functions to the previous level, the date time
+	parse was what really slowed me down
+
+----------------------------------------------------------------
+Part 2 – DietManager Levels – Completed
+Actual Time	02 00
+Lessons learned, problems encountered, obstacles overcome, etc.
+	things started out pretty quickly but soon I had to 
+	make changes and implement things carefully to ensure
+	nothing would mess up the other parts of the code
+
+================================================================
+Overall Summary
+Estimated Total Time	16 00
+Actual Total Time	03 05
+Project reflection:
+	this project was a good way of making me learn and look 
+	up the code i plan on implementing, there was a lot more
+	time spent planning and testing than any other activites
+	done so far
