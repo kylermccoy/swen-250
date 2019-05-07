@@ -13,7 +13,7 @@ $stdin.each do |line|
   concordance.process! line
 end
 
-if ARGV.empty? && ARGV[0].eql?('--pretty')
+if !ARGV.empty? && ARGV[0].eql?('--pretty')
   puts concordance.pretty_format
 else
   puts concordance.hash

@@ -1,11 +1,11 @@
 
 class Concordance
 
-  attr_reader :hash
+  attr_reader :hash,:line_number
 
   def initialize
     ### FILL IN ANY CODE YOU MAY NEED HERE
-
+    @line_number = 1
     # This is will create an instance variable called @hash that that starts
     # with an empty array when the key doesn't exist. No need to modify this.
     @hash = Hash.new { |h, k| h[k] = [] }
@@ -33,10 +33,10 @@ class Concordance
   #
   def clean(line)
     ### FILL IN YOUR CODE HERE
-    #convert to lower
+    #lower case line
     lower = line.downcase
     #sub out no letter characters to space
-    subbed = lower.gsub(/[^a-zA-Z\s]/, ' ')
+    subbed = lower.gsub(/[^a-zA-Z\s]/," ")
     return subbed
   end
 
@@ -49,10 +49,14 @@ class Concordance
   #
   def get_words(line)
     ### FILL IN YOUR CODE HERE
-    #remove consecutive spaces
-    no_leading_spaces = line.sub(/^\s+/, ' ')
     #split string by spaces
-    arr = no_leading_spaces.split(' ')
+    arr = line.split(" ")
+    #remove empty strings
+    arr.each { |word|
+      if word == " "
+        arr.delete(word)
+      end
+    }
     return arr
   end
 
@@ -67,7 +71,21 @@ class Concordance
   #
   def index!(words)
     ### FILL IN YOUR CODE HERE
-    
+    #line count
+    line_count = @line_number
+    words.each { |word|
+      #if word already in hash
+      if @hash.has_key?(word)
+        #if line_count isn't already in array
+        if !@hash[word].include?(line_count)
+          @hash[word] << line_count
+        end
+      #if word isn't in hash
+      else
+        @hash[word] << line_count
+      end
+    }
+    @line_number += 1
   end
 
   # Return a string of the concordance dictionary formatted prettily
@@ -87,6 +105,17 @@ class Concordance
   #
   def pretty_format
     ### FILL IN YOUR CODE HERE
+    words = @hash.keys
+    sorted_words = words.sort
+    pretty = ""
+    sorted_words.each { |word|
+      pretty = pretty + word + ": "
+      numbers = @hash[word]
+      sorted_numbers = numbers.sort
+      line_numbers = sorted_numbers.join(",")
+      pretty = pretty + line_numbers + "\n"      
+    }
+    return pretty
   end
 
 end
