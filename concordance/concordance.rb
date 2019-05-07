@@ -5,6 +5,7 @@ class Concordance
 
   def initialize
     ### FILL IN ANY CODE YOU MAY NEED HERE
+    #keep track of line number
     @line_number = 1
     # This is will create an instance variable called @hash that that starts
     # with an empty array when the key doesn't exist. No need to modify this.
@@ -108,9 +109,11 @@ class Concordance
     words = @hash.keys
     sorted_words = words.sort
     pretty = ""
+    #go through array of sorted words and add them to string
     sorted_words.each { |word|
       pretty = pretty + word + ": "
       numbers = @hash[word]
+      # add the sorted line numbers
       sorted_numbers = numbers.sort
       line_numbers = sorted_numbers.join(",")
       pretty = pretty + line_numbers + "\n"      
